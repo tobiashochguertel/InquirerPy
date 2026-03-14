@@ -1,6 +1,60 @@
 # CHANGELOG
 
 
+## v0.3.1 (2026-03-14)
+
+### Bug Fixes
+
+- Only auto-commit compat report on schedule/dispatch (not push) to avoid CD race
+  ([`c31238f`](https://github.com/tobiashochguertel/InquirerPy/commit/c31238ff3cd159595550c4432ad4b46c02bcb9f8))
+
+- Rewrite compat_check to use pip install + griffe.load (no pypi extra)
+  ([`b899aca`](https://github.com/tobiashochguertel/InquirerPy/commit/b899aca9d146fd2f6f6bb8b500f7ffea810bac0b))
+
+- Use griffe CLI subprocess for PyPI comparison
+  ([`d8f7c96`](https://github.com/tobiashochguertel/InquirerPy/commit/d8f7c962914630a58401f9ec33754cf2c6c98356))
+
+### Chores
+
+- Update poetry.lock after adding griffe[pypi] dev dependency
+  ([`3faf5c7`](https://github.com/tobiashochguertel/InquirerPy/commit/3faf5c7b62f2637ac41e88c2570e5fa95b01ce71))
+
+Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>
+
+### Continuous Integration
+
+- Add workflow_dispatch trigger to CI workflow
+  ([`826d2c4`](https://github.com/tobiashochguertel/InquirerPy/commit/826d2c44997c86362098bb635cbb9a56168d6787))
+
+Allows manually triggering CI runs from GitHub UI or gh CLI, useful for verifying secret changes
+  without code commits.
+
+Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>
+
+### Documentation
+
+- Fix install instructions, add upstream compatibility report
+  ([`3477ae1`](https://github.com/tobiashochguertel/InquirerPy/commit/3477ae1ff5a690b50c55c74bc8f645a8bce579b3))
+
+- README.md: fix pip3 install InquirerPy -> InquirerPrompt - README.md: fix python >= 3.7 -> >= 3.9
+  (reflect actual CI matrix) - README.md: update PyPI badges with style params to bust CDN cache -
+  README.md: add kazhala/InquirerPy as primary credit in Credits section - docs/index.md: fix python
+  >= 3.7 -> >= 3.9 - docs/pages/faq.md: add FAQ entry about upstream compatibility -
+  docs/pages/compatibility.md: new page explaining drop-in compatibility -
+  docs/pages/compat_report.md: stub, populated by CI compat workflow - .github/workflows/compat.yml:
+  griffe-based API diff workflow, auto-commits report - scripts/compat_check.py: generates markdown
+  compat report using griffe[pypi] - pyproject.toml: add griffe[pypi] dev dependency - Taskfile.yml:
+  add compat and compat:check tasks
+
+Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>
+
+- Update upstream compatibility report [skip ci]
+  ([`e2ea945`](https://github.com/tobiashochguertel/InquirerPy/commit/e2ea945f8af2520972e2376926c51ec9e5e0f747))
+
+- Update upstream compatibility report [skip ci]
+  ([`423d667`](https://github.com/tobiashochguertel/InquirerPy/commit/423d6673c76126685c27152835985dfdf5005624))
+
+
 ## v0.3.0 (2026-03-14)
 
 ### Bug Fixes
