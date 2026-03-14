@@ -1,0 +1,198 @@
+# https://taskfile.dev
+version: "3"
+
+vars:
+  PACKAGE: InquirerPy
+  PYTHON: python3
+  POETRY: poetry
+  SRC_DIR: InquirerPy
+  TEST_DIR: tests
+
+tasks:
+  default:
+    desc: List all available tasks
+    cmds:
+      - task --list
+
+  # ─── Setup ───────────────────────────────────────────────────────────────────
+
+  install:
+    desc: Install all dependencies (including dev)
+    cmds:
+      - "{{.POETRY}} install"
+
+  install:prod:
+    desc: Install production dependencies only
+    cmds:
+      - "{{.POETRY}} install --no-dev"
+
+  # ─── Code Quality ────────────────────────────────────────────────────────────
+
+  lint:
+    desc: Run all linting checks (pre-commit + pyright)
+    cmds:
+      - task: lint:precommit
+      - task: lint:types
+
+  lint:precommit:
+    desc: Run pre-commit hooks on all files
+    cmds:
+      - "{{.POETRY}} run pre-commit run --all-files"
+
+  lint:types:
+    desc: Run pyright type checker
+    cmds:
+      - "{{.POETRY}} run pyright {{.SRC_DIR}}"
+
+  format:
+    desc: Format code with black and isort
+    cmds:
+      - "{{.POETRY}} run black {{.SRC_DIR}} {{.TEST_DIR}}"
+      - "{{.POETRY}} run isort {{.SRC_DIR}} {{.TEST_DIR}}"
+
+  format:check:
+    desc: Check formatting without modifying files
+    cmds:
+      - "{{.POETRY}} run black --check {{.SRC_DIR}} {{.TEST_DIR}}"
+      - "{{.POETRY}} run isort --check-only {{.SRC_DIR}} {{.TEST_DIR}}"
+
+  # ─── Testing ─────────────────────────────────────────────────────────────────
+
+  test:
+    desc: Run all tests
+    cmds:
+      - "{{.POETRY}} run python -m pytest {{.TEST_DIR}} -v"
+
+  test:watch:
+    desc: Run tests in watch mode (requires pytest-watch)
+    cmds:
+      - "{{.POETRY}} run ptw {{.TEST_DIR}} -- -v"
+
+  test:fast:
+    desc: Run tests without slow markers
+    cmds:
+      - "{{.POETRY}} run pytest {{.TEST_DIR}} -v -m 'not slow'"
+
+  # ─── Coverage ────────────────────────────────────────────────────────────────
+
+  coverage:
+    desc: Run tests with coverage report
+    cmds:
+      - "{{.POETRY}} run coverage run -m pytest {{.TEST_DIR}}"
+      - "{{.POETRY}} run coverage report --show-missing"
+
+  coverage:html:
+    desc: Generate HTML coverage report
+    cmds:
+      - "{{.POETRY}} run coverage run -m pytest {{.TEST_DIR}}"
+      - "{{.POETRY}} run coverage html"
+      - open htmlcov/index.html
+
+  coverage:xml:
+    desc: Generate XML coverage report (for CI)
+    cmds:
+      - "{{.POETRY}} run coverage run -m pytest {{.TEST_DIR}}"
+      - "{{.POETRY}} run coverage xml"
+
+  # ─── Build ───────────────────────────────────────────────────────────────────
+
+  build:
+    desc: Build distribution packages (sdist + wheel)
+    cmds:
+      - "{{.POETRY}} build"
+
+  build:clean:
+    desc: Clean build artifacts and rebuild
+    cmds:
+      - task: clean:dist
+      - task: build
+
+  # ─── Release ─────────────────────────────────────────────────────────────────
+
+  release:
+    desc: Create a new semantic release (dry-run by default, set DRY_RUN=false to release)
+    vars:
+      DRY_RUN: '{{default "true" .DRY_RUN}}'
+    cmds:
+      - |
+        if [ "{{.DRY_RUN}}" = "true" ]; then
+          echo "DRY RUN — use: task release DRY_RUN=false"
+          {{.POETRY}} run semantic-release --noop version
+        else
+          {{.POETRY}} run semantic-release version
+        fi
+
+  release:publish:
+    desc: Publish the latest release to PyPI (requires PYPI_API_TOKEN)
+    cmds:
+      - "{{.POETRY}} publish --build"
+
+  unrelease:
+    desc: Delete the latest git tag (undo last release tag locally)
+    prompt: "This will delete the latest git tag locally. Are you sure?"
+    cmds:
+      - |
+        LATEST_TAG=$(git describe --tags --abbrev=0)
+        echo "Deleting tag: $LATEST_TAG"
+        git tag -d "$LATEST_TAG"
+        echo "To also delete from remote: git push origin :refs/tags/$LATEST_TAG"
+
+  # ─── Documentation ───────────────────────────────────────────────────────────
+
+  docs:serve:
+    desc: Serve documentation locally
+    cmds:
+      - "{{.POETRY}} run sphinx-autobuild docs docs/_build/html --open-browser"
+
+  docs:build:
+    desc: Build documentation
+    cmds:
+      - "{{.POETRY}} run sphinx-build docs docs/_build/html"
+
+  # ─── Utilities ───────────────────────────────────────────────────────────────
+
+  clean:
+    desc: Remove all generated files
+    cmds:
+      - task: clean:dist
+      - task: clean:cache
+      - task: clean:coverage
+
+  clean:dist:
+    desc: Remove build/dist artifacts
+    cmds:
+      - rm -rf dist/ build/ *.egg-info
+
+  clean:cache:
+    desc: Remove Python cache files
+    cmds:
+      - find . -type d -name __pycache__ -exec rm -rf {} + 2>/dev/null || true
+      - find . -type f -name "*.pyc" -delete 2>/dev/null || true
+      - rm -rf .mypy_cache .pytest_cache .pytype
+
+  clean:coverage:
+    desc: Remove coverage reports
+    cmds:
+      - rm -rf htmlcov/ .coverage coverage.xml .coverage.*
+
+  sync:upstream:
+    desc: Sync fork with upstream kazhala/InquirerPy
+    cmds:
+      - git fetch upstream
+      - git merge upstream/master --no-edit
+      - echo "Synced with upstream. Review changes and push."
+
+  check:
+    desc: Run full check suite (lint + test + coverage)
+    cmds:
+      - task: lint
+      - task: test
+      - task: coverage
+
+  ci:
+    desc: Simulate CI locally
+    cmds:
+      - task: install
+      - task: lint
+      - task: test
+      - task: coverage:xml

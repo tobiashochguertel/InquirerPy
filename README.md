@@ -1,13 +1,37 @@
 # InquirerPy
 
-[![Test](https://github.com/kazhala/InquirerPy/workflows/Test/badge.svg)](https://github.com/kazhala/InquirerPy/actions?query=workflow%3ATest)
-[![Lint](https://github.com/kazhala/InquirerPy/workflows/Lint/badge.svg)](https://github.com/kazhala/InquirerPy/actions?query=workflow%3ALint)
-[![Build](https://codebuild.ap-southeast-2.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiUUYyRUIxOXBWZ0hKcUhrbXplQklMemRsTVBxbUk3bFlTdldnRGpxeEpQSXJidEtmVEVzbVNCTE1UR3VoRSt2N0NQV0VaUXlCUzNackFBNzRVUFBBS1FnPSIsIml2UGFyYW1ldGVyU3BlYyI6IloxREtFeWY4WkhxV0NFWU0iLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=master)](https://ap-southeast-2.console.aws.amazon.com/codesuite/codebuild/378756445655/projects/InquirerPy/history?region=ap-southeast-2&builds-meta=eyJmIjp7InRleHQiOiIifSwicyI6e30sIm4iOjIwLCJpIjowfQ)
-[![Coverage](https://img.shields.io/coveralls/github/kazhala/InquirerPy?logo=coveralls)](https://coveralls.io/github/kazhala/InquirerPy?branch=master)
+> **🍴 Community-Maintained Fork**
+>
+> This is a community fork of [kazhala/InquirerPy](https://github.com/kazhala/InquirerPy), maintained at
+> [`tobiashochguertel/InquirerPy`](https://github.com/tobiashochguertel/InquirerPy).
+>
+> The original project is a fantastic library that we rely on and deeply appreciate. Unfortunately the upstream
+> has been quiet for some time, and the community has accumulated valuable bug fixes, compatibility updates,
+> and feature contributions that have not been reviewed or merged. Rather than letting those improvements go to
+> waste, we decided to maintain this fork so that InquirerPy stays healthy and up-to-date for everyone.
+>
+> **Our goal is to contribute all improvements back upstream** — if the original author becomes active again
+> we will happily defer to them. Until then, we are keeping the lights on here. 🙏
+>
+> | Item | Detail |
+> |------|--------|
+> | Upstream | [kazhala/InquirerPy](https://github.com/kazhala/InquirerPy) @ `0.3.4` (last commit Nov 2022) |
+> | This fork | [tobiashochguertel/InquirerPy](https://github.com/tobiashochguertel/InquirerPy) |
+> | PyPI | `InquirerPy-community` *(planned — see [FORK_SETUP_NOTES.md])* |
+> | Docs | *(ReadTheDocs setup in progress)* |
+>
+> If you are the original author and would like to resume ownership or collaborate, please open an issue — we
+> would love to work together!
+
+---
+
+[![CI](https://github.com/tobiashochguertel/InquirerPy/workflows/CI/badge.svg)](https://github.com/tobiashochguertel/InquirerPy/actions?query=workflow%3ACI)
+[![Coverage](https://codecov.io/gh/tobiashochguertel/InquirerPy/branch/master/graph/badge.svg)](https://codecov.io/gh/tobiashochguertel/InquirerPy)
 [![Version](https://img.shields.io/pypi/pyversions/InquirerPy)](https://pypi.org/project/InquirerPy/)
 [![PyPi](https://img.shields.io/pypi/v/InquirerPy)](https://pypi.org/project/InquirerPy/)
+[![Upstream](https://img.shields.io/badge/upstream-kazhala%2FInquirerPy-blue)](https://github.com/kazhala/InquirerPy)
 
-Documentation: [inquirerpy.readthedocs.io](https://inquirerpy.readthedocs.io/)
+Documentation: [inquirerpy.readthedocs.io](https://inquirerpy.readthedocs.io/) *(upstream docs — fork docs coming soon)*
 
 <!-- start intro -->
 

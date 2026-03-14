@@ -139,3 +139,8 @@ cython_debug/
 sample.txt
 
 .vscode
+# Fork setup notes — contains credentials/tokens/account info — NEVER commit this
+FORK_SETUP_NOTES.md
+fork-setup-notes.md
+.fork-notes/
+*.secrets

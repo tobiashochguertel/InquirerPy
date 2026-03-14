@@ -71,3 +71,14 @@ exclude_lines = [
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.semantic_release]
+version_toml = ["pyproject.toml:tool.poetry.version"]
+branch = "master"
+upload_to_pypi = false
+upload_to_release = true
+build_command = "pip install poetry && poetry build"
+commit_parser = "conventional_commits"
+changelog_file = "CHANGELOG.md"
+changelog_sections = ["feat", "fix", "perf", "refactor", "breaking"]
+tag_format = "v{version}"
