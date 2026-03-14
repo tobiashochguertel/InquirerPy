@@ -48,11 +48,15 @@ jobs:
           path: docs/pages/compat_report.md
           if-no-files-found: warn
 
-      - name: Commit updated report (master only)
-        if: github.ref == 'refs/heads/master' && github.event_name != 'pull_request'
+      - name: Commit updated report (master only, not on push to avoid race with CD)
+        if: >
+          github.ref == 'refs/heads/master' &&
+          github.event_name != 'pull_request' &&
+          github.event_name != 'push'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          git pull --rebase origin master
           git add docs/pages/compat_report.md
           if git diff --cached --quiet; then
             echo "No changes to compat_report.md — nothing to commit."
