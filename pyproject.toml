@@ -14,7 +14,7 @@ profile = "black"
 
 [tool.poetry]
 name = "InquirerPrompt"
-version = "0.3.1"
+version = "0.3.4"
 description = "Python port of Inquirer.js — a collection of common interactive command-line user interfaces (community-maintained fork of InquirerPy)"
 authors = ["Kevin Zhuang <kevin7441@gmail.com>"]
 maintainers = ["Tobias Hochgürtel <tobiashochguertel@users.noreply.github.com>"]

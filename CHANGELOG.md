@@ -1,6 +1,14 @@
 # CHANGELOG
 
 
+## v0.3.4 (2026-03-14)
+
+### Bug Fixes
+
+- Correct GIF URL to raw format, add fork copyright to LICENSE, rename master to main in workflows
+  ([`5cde6ce`](https://github.com/tobiashochguertel/InquirerPy/commit/5cde6ce92d99168c7a0e2f0f5355c6c43a864b1a))
+
+
 ## v0.3.1 (2026-03-14)
 
 ### Bug Fixes
