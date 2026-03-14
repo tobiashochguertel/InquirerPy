@@ -32,7 +32,6 @@ jobs:
           path: .venv
           key: venv-lint-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}
       - name: Install dependencies
-        if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
         run: poetry install --no-interaction
       - name: Run pre-commit
         run: poetry run pre-commit run --all-files
@@ -65,7 +64,6 @@ jobs:
           path: .venv
           key: venv-${{ runner.os }}-${{ matrix.python-version }}-${{ hashFiles('**/poetry.lock') }}
       - name: Install dependencies
-        if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
         run: poetry install --no-interaction
       - name: Run tests
         run: poetry run python -m pytest tests/ -v --tb=short
@@ -91,7 +89,6 @@ jobs:
           path: .venv
           key: venv-coverage-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}
       - name: Install dependencies
-        if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
         run: poetry install --no-interaction
       - name: Run coverage
         run: |
