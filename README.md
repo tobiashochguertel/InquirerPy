@@ -1,4 +1,4 @@
-# InquirerPy
+# InquirerPy (published as **InquirerPrompt**)
 
 > **🍴 Community-Maintained Fork**
 >
@@ -17,8 +17,8 @@
 > |------|--------|
 > | Upstream | [kazhala/InquirerPy](https://github.com/kazhala/InquirerPy) @ `0.3.4` (last commit Nov 2022) |
 > | This fork | [tobiashochguertel/InquirerPy](https://github.com/tobiashochguertel/InquirerPy) |
-> | PyPI | `InquirerPy-community` *(planned — see [FORK_SETUP_NOTES.md])* |
-> | Docs | *(ReadTheDocs setup in progress)* |
+> | Install | `pip install InquirerPrompt` (import still: `import InquirerPy`) |
+> | Docs | [InquirerPrompt.readthedocs.io](https://InquirerPrompt.readthedocs.io) |
 >
 > If you are the original author and would like to resume ownership or collaborate, please open an issue — we
 > would love to work together!
@@ -27,11 +27,11 @@
 
 [![CI](https://github.com/tobiashochguertel/InquirerPy/workflows/CI/badge.svg)](https://github.com/tobiashochguertel/InquirerPy/actions?query=workflow%3ACI)
 [![Coverage](https://codecov.io/gh/tobiashochguertel/InquirerPy/branch/master/graph/badge.svg)](https://codecov.io/gh/tobiashochguertel/InquirerPy)
-[![Version](https://img.shields.io/pypi/pyversions/InquirerPy)](https://pypi.org/project/InquirerPy/)
-[![PyPi](https://img.shields.io/pypi/v/InquirerPy)](https://pypi.org/project/InquirerPy/)
+[![Version](https://img.shields.io/pypi/pyversions/InquirerPrompt)](https://pypi.org/project/InquirerPrompt/)
+[![PyPi](https://img.shields.io/pypi/v/InquirerPrompt)](https://pypi.org/project/InquirerPrompt/)
 [![Upstream](https://img.shields.io/badge/upstream-kazhala%2FInquirerPy-blue)](https://github.com/kazhala/InquirerPy)
 
-Documentation: [inquirerpy.readthedocs.io](https://inquirerpy.readthedocs.io/) *(upstream docs — fork docs coming soon)*
+Documentation: [InquirerPrompt.readthedocs.io](https://InquirerPrompt.readthedocs.io)
 
 <!-- start intro -->
 

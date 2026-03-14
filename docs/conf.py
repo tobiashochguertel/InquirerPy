@@ -3,9 +3,9 @@ import sys
 
 sys.path.insert(0, os.path.abspath("."))
 
-project = "InquirerPy"
-copyright = "2021, Kevin Zhuang"
-author = "Kevin Zhuang"
+project = "InquirerPrompt"
+copyright = "2021, Kevin Zhuang; 2024-2026, tobiashochguertel"
+author = "Kevin Zhuang; tobiashochguertel"
 version = "0.3.4"
 release = version
 

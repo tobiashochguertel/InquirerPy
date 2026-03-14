@@ -14,7 +14,7 @@ python >= 3.7
 ```
 
 ```
-pip3 install InquirerPy
+pip3 install InquirerPrompt
 ```
 
 ## Basic Usage
@@ -95,7 +95,7 @@ Please visit the sidebar on the left.
 1. Clone the repository
 
 ```
-git clone https://github.com/kazhala/InquirerPy.git
+git clone https://github.com/tobiashochguertel/InquirerPy.git
 cd InquirerPy
 ```
 
@@ -184,5 +184,5 @@ pages/color_print.md
 pages/faq.md
 pages/api.md
 pages/changelog.md
-GitHub Repository <https://github.com/kazhala/InquirerPy>
+GitHub Repository <https://github.com/tobiashochguertel/InquirerPy>
 ```
