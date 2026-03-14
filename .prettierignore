@@ -1,0 +1,33 @@
+# Python files
+*.py
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Python build artifacts
+build/
+dist/
+*.egg-info/
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Cache directories
+.pytest_cache/
+.coverage
+.mypy_cache/
+.ruff_cache/
+
+# Keep Prettier focused on documentation and configs
+**/*.py
+!**/*.md
+!**/*.json
+!**/*.yaml
+!**/*.yml
+!*.md
+!zsh_analysis/reports/**/*.md
+
+##

@@ -1,0 +1,43 @@
+# EditorConfig for consistent formatting across the project
+# See: https://editorconfig.org/
+
+root = true
+
+# Default formatting (all files)
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+max_line_length = 200
+indent_size = 4
+
+# Shell scripts (bash, sh, bash-like)
+[*.{sh,bash,inc,command},*.zsh,.zshrc,.zshenv,.zprofile,.zshaliases]
+indent_size = 2
+# Shfmt specific options (when ignoreEditorconfig = false in VSCode settings)
+# See: https://github.com/mvdan/sh
+# shell_variant = bash
+# shell_variant = zsh
+# binary_next_line = false         # boolean operators stay on same line
+case_indent = true                 # indent case patterns
+# func_next_line = false           # function braces on same line
+space_redirects = true             # space after redirection operators
+# simplify = false                 # don't remove redundant code
+switch_case_indent = true          # indent case patterns
+keep_padding = true                # keep padding around redirects
+function_next_line = true
+
+# Markdown documentation
+[*.{md,markdown}]
+trim_trailing_whitespace = true
+max_line_length = 3000
+indent_size = 2
+
+# YAML/JSON configuration
+[*.{yaml,yml,json}]
+indent_style = space
+
+[Makefile]
+indent_style = tab

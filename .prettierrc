@@ -1,0 +1,82 @@
+{
+    "semi": false,
+    "trailingComma": "all",
+    "singleQuote": true,
+    "printWidth": 200,
+    "tabWidth": 4,
+    "useTabs": false,
+    "bracketSpacing": true,
+    "arrowParens": "always",
+    "bracketSameLine": false,
+    "quoteProps": "as-needed",
+    "proseWrap": "always",
+    "htmlWhitespaceSensitivity": "css",
+    "embeddedLanguageFormatting": "auto",
+    "endOfLine": "lf",
+    "overrides": [
+        {
+            "files": [
+                "*.json"
+            ]
+        },
+        {
+            "files": [
+                "*.ts",
+                "*.tsx"
+            ],
+            "options": {
+                "parser": "typescript"
+            }
+        },
+        {
+            "files": [
+                "*.md",
+                "**/*.md",
+                "*.mdx",
+                "**/*.mdx"
+            ],
+            "options": {
+                "proseWrap": "preserve",
+                "printWidth": 3000,
+                "tabWidth": 2,
+                "embeddedLanguageFormatting": "auto",
+                "singleQuote": false
+            }
+        },
+        {
+            "files": [
+                "*.html",
+                "*.htm"
+            ],
+            "options": {
+                "parser": "html",
+                "htmlWhitespaceSensitivity": "strict"
+            }
+        },
+        {
+            "files": [
+                "*.yaml",
+                "*.yml"
+            ],
+            "options": {
+                "tabWidth": 2
+            }
+        },
+        {
+            "files": [
+                "*.zsh",
+                "*.bash",
+                "*.sh"
+            ],
+            "options": {
+                "tabWidth": 2
+            }
+        }
+    ],
+    "plugins": [
+        "@prettier/plugin-hermes",
+        "@prettier/plugin-oxc",
+        "prettier-plugin-gherkin"
+        // "prettier-plugin-sh" // https://github.com/un-ts/prettier/issues/483 (is not compatible with the experimental cli feature)
+    ]
+}
