@@ -1,3 +1,17 @@
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.coverage.run]
+source = ["InquirerPy"]
+
+[tool.coverage.report]
+ignore_errors = true
+exclude_lines = ["if TYPE_CHECKING:"]
+
+[tool.isort]
+profile = "black"
+
 [tool.poetry]
 name = "InquirerPy"
 version = "0.3.4"
@@ -8,7 +22,7 @@ readme = "README.md"
 repository = "https://github.com/kazhala/InquirerPy"
 documentation = "https://inquirerpy.readthedocs.io"
 license = "MIT"
-keywords=["cli", "prompt-toolkit", "commandline", "inquirer", "development"]
+keywords = ["cli", "prompt-toolkit", "commandline", "inquirer", "development"]
 classifiers = [
   "Development Status :: 2 - Pre-Alpha",
   "Environment :: Console",
@@ -25,52 +39,40 @@ classifiers = [
   "Topic :: Software Development :: Libraries",
   "Topic :: Software Development :: Libraries :: Application Frameworks",
 ]
-packages = [
-  {include = "InquirerPy"}
-]
+packages = [{ include = "InquirerPy" }]
 include = ["InquirerPy/py.typed"]
 
 [tool.poetry.dependencies]
-python = "^3.7"
-prompt-toolkit = "^3.0.1"
+Sphinx = { version = "^4.1.2", optional = true }
+furo = { version = "^2021.8.17-beta.43", optional = true }
+myst-parser = { version = "^0.15.1", optional = true }
 pfzy = "^0.3.1"
-Sphinx = {version = "^4.1.2", optional = true}
-furo = {version = "^2021.8.17-beta.43", optional = true}
-sphinx-copybutton = {version = "^0.4.0", optional = true}
-sphinx-autobuild = {version = "^2021.3.14", optional = true}
-myst-parser = {version = "^0.15.1", optional = true}
+prompt-toolkit = "^3.0.1"
+python = "^3.7"
+sphinx-autobuild = { version = "^2021.3.14", optional = true }
+sphinx-copybutton = { version = "^0.4.0", optional = true }
 
 [tool.poetry.dev-dependencies]
-pre-commit = "^2.11.1"
-isort = "^5.9.1"
 black = "^21.6b0"
-pydocstyle = "^6.1.1"
 coveralls = "^3.2.0"
+isort = "^5.9.1"
+pre-commit = "^2.11.1"
+pydocstyle = "^6.1.1"
 
 [tool.poetry.extras]
-docs = ["Sphinx", "furo", "myst-parser", "sphinx-autobuild", "sphinx-copybutton"]
-
-[tool.isort]
-profile = "black"
+docs = [
+  "Sphinx",
+  "furo",
+  "myst-parser",
+  "sphinx-autobuild",
+  "sphinx-copybutton"
+]
 
 [tool.pydocstyle]
 match = "^(?!(.*(init|main))).*\\.py"
 convention = "pep257"
 add-ignore = "D107"
 match_dir = "^(?!(example)).*"
-
-[tool.coverage.run]
-source = ["InquirerPy"]
-
-[tool.coverage.report]
-ignore_errors = true
-exclude_lines = [
-    "if TYPE_CHECKING:"
-]
-
-[build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
 
 [tool.semantic_release]
 version_toml = ["pyproject.toml:tool.poetry.version"]
