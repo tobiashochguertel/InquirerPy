@@ -75,7 +75,7 @@ python >= 3.7
 
 ## Getting Started
 
-Checkout full documentation **[here](https://inquirerpy.readthedocs.io/)**.
+Checkout full documentation **[here](https://InquirerPrompt.readthedocs.io/)**.
 
 ### Install
 
@@ -138,7 +138,7 @@ Every style keys from [PyInquirer](https://github.com/CITGuru/PyInquirer) is pre
 | selected   | pointer    |
 
 Although `InquirerPy` support all the keys from [PyInquirer](https://github.com/CITGuru/PyInquirer), the styling works slightly different.
-Please refer to the [Style](https://inquirerpy.readthedocs.io/en/latest/pages/style.html) documentation for detailed information.
+Please refer to the [Style](https://InquirerPrompt.readthedocs.io/en/latest/pages/style.html) documentation for detailed information.
 
 <!-- end migration -->
 
@@ -150,7 +150,7 @@ Please refer to the [Style](https://inquirerpy.readthedocs.io/en/latest/pages/st
 It's already a well established and stable library.
 
 Comparing with [questionary](https://github.com/tmbo/questionary), `InquirerPy` offers even more customisation options in styles, UI as well as key bindings. `InquirerPy` also provides a new
-and powerful [fuzzy](https://inquirerpy.readthedocs.io/en/latest/pages/prompts/fuzzy.html) prompt.
+and powerful [fuzzy](https://InquirerPrompt.readthedocs.io/en/latest/pages/prompts/fuzzy.html) prompt.
 
 ### python-inquirer
 
