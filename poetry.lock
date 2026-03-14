@@ -231,7 +231,7 @@ files = [
     {file = "colorama-0.4.4-py2.py3-none-any.whl", hash = "sha256:9f47eda37229f68eee03b24b9748937c7dc3868f906e8ba69fbcbdd3bc5dc3e2"},
     {file = "colorama-0.4.4.tar.gz", hash = "sha256:5941b2b48a20143d2267e95b1c2a7603ce057ee39fd88e7329b0c292aa16869b"},
 ]
-markers = {main = "extra == \"docs\"", dev = "platform_system == \"Windows\" or sys_platform == \"win32\""}
+markers = {main = "extra == \"docs\""}
 
 [[package]]
 name = "commonmark"
@@ -514,6 +514,21 @@ typing-extensions = {version = ">=3.10.0.2", markers = "python_version < \"3.10\
 [package.extras]
 doc = ["sphinx (>=7.1.2,<7.2)", "sphinx-autodoc-typehints", "sphinx_rtd_theme"]
 test = ["coverage[toml]", "ddt (>=1.1.1,!=1.4.3)", "mock ; python_version < \"3.8\"", "mypy (==1.18.2) ; python_version >= \"3.9\"", "pre-commit", "pytest (>=7.3.1)", "pytest-cov", "pytest-instafail", "pytest-mock", "pytest-sugar", "typing-extensions ; python_version < \"3.11\""]
+
+[[package]]
+name = "griffe"
+version = "1.14.0"
+description = "Signatures for entire Python programs. Extract the structure, the frame, the skeleton of your project, to generate API documentation or find breaking changes in your API."
+optional = false
+python-versions = ">=3.9"
+groups = ["dev"]
+files = [
+    {file = "griffe-1.14.0-py3-none-any.whl", hash = "sha256:0e9d52832cccf0f7188cfe585ba962d2674b241c01916d780925df34873bceb0"},
+    {file = "griffe-1.14.0.tar.gz", hash = "sha256:9d2a15c1eca966d68e00517de5d69dd1bc5c9f2335ef6c1775362ba5b8651a13"},
+]
+
+[package.dependencies]
+colorama = ">=0.4"
 
 [[package]]
 name = "identify"
@@ -1929,4 +1944,4 @@ docs = ["Sphinx", "furo", "myst-parser", "sphinx-autobuild", "sphinx-copybutton"
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.9"
-content-hash = "4492070bab4938ad768fa749508a90bf2f1588154e06babbad4a9ba76a413b8b"
+content-hash = "91a80e85a12fcc7e868566faba88f50131e729172d7558f26d5802c629a1648b"
