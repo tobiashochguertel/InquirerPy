@@ -82,11 +82,16 @@ match_dir = "^(?!(example)).*"
 
 [tool.semantic_release]
 version_toml = ["pyproject.toml:tool.poetry.version"]
-branch = "master"
-upload_to_pypi = true
-upload_to_release = true
 build_command = "pip install poetry && poetry build"
-commit_parser = "conventional_commits"
-changelog_file = "CHANGELOG.md"
-changelog_sections = ["feat", "fix", "perf", "refactor", "breaking"]
+commit_parser = "conventional"
 tag_format = "v{version}"
+major_on_zero = false
+
+[tool.semantic_release.branches.main]
+match = "(master|main)"
+
+[tool.semantic_release.changelog]
+changelog_file = "CHANGELOG.md"
+
+[tool.semantic_release.publish]
+upload_to_vcs_release = true

@@ -7,11 +7,12 @@ build:
   os: ubuntu-24.04
   tools:
     python: "3.11"
-  commands:
-    - pip install poetry
-    - poetry install --extras docs
-    - mkdir -p $READTHEDOCS_OUTPUT/html
-    - poetry run sphinx-build docs $READTHEDOCS_OUTPUT/html
+
+python:
+  install:
+    - requirements: docs/requirements.txt
+    - method: pip
+      path: .
 
 sphinx:
   configuration: docs/conf.py
