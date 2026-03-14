@@ -3,5 +3,8 @@
   "reportUnusedVariable": "warning",
   "reportUnusedClass": "warning",
   "reportDuplicateImport": "warning",
+  "reportIncompatibleMethodOverride": "none",
+  "reportIncompatibleVariableOverride": "none",
+  "reportGeneralTypeIssues": "none",
   "exclude": [ "**/__init__.py", "./InquirerPy/inquirer.py" ]
 }
