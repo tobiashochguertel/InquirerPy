@@ -10,7 +10,7 @@
 ## Install
 
 ```{admonition} Requirements
-python >= 3.7
+python >= 3.9
 ```
 
 ```
@@ -182,6 +182,7 @@ pages/color_print.md
 :hidden:
 
 pages/faq.md
+pages/compatibility.md
 pages/api.md
 pages/changelog.md
 GitHub Repository <https://github.com/tobiashochguertel/InquirerPy>

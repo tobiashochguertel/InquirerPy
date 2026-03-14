@@ -77,3 +77,28 @@ class TestPrompt(unittest.TestCase):
 
 No. With the current implementation this is not possible since the control of the prompt is terminated after it is answered.
 This may be supported in the future but not a priority at the moment.
+
+## Is InquirerPrompt compatible with kazhala/InquirerPy (upstream)?
+
+**Yes — InquirerPrompt is designed to be a drop-in replacement for the upstream `InquirerPy` package.**
+
+The import name is unchanged: `import InquirerPy` works exactly the same as before.
+Simply replace your `pip install InquirerPy` with `pip install InquirerPrompt` and nothing else needs to change.
+
+```sh
+# Before (upstream, now unmaintained)
+pip install InquirerPy
+
+# After (this fork, actively maintained)
+pip install InquirerPrompt
+```
+
+```python
+# Your code stays exactly the same
+from InquirerPy import prompt, inquirer
+```
+
+Our goal is to maintain **full backwards-compatibility** with upstream `InquirerPy 0.3.4` (the last upstream release) for as long as possible.
+Any intentional API changes will be clearly documented in the [changelog](changelog.md) and in the [Compatibility Report](compatibility.md).
+
+See the [Compatibility Report](compatibility.md) for a detailed API surface comparison between this fork and the upstream release.

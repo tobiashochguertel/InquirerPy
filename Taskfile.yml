@@ -196,3 +196,13 @@ tasks:
       - task: lint
       - task: test
       - task: coverage:xml
+
+  compat:
+    desc: Check API compatibility with upstream InquirerPy (requires griffe[pypi])
+    cmds:
+      - "{{.POETRY}} run python scripts/compat_check.py"
+
+  compat:check:
+    desc: Check compatibility and exit non-zero if breaking changes found
+    cmds:
+      - "{{.POETRY}} run python scripts/compat_check.py --check"

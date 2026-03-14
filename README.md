@@ -27,8 +27,8 @@
 
 [![CI](https://github.com/tobiashochguertel/InquirerPy/workflows/CI/badge.svg)](https://github.com/tobiashochguertel/InquirerPy/actions?query=workflow%3ACI)
 [![Coverage](https://codecov.io/gh/tobiashochguertel/InquirerPy/branch/master/graph/badge.svg)](https://codecov.io/gh/tobiashochguertel/InquirerPy)
-[![Version](https://img.shields.io/pypi/pyversions/InquirerPrompt)](https://pypi.org/project/InquirerPrompt/)
-[![PyPi](https://img.shields.io/pypi/v/InquirerPrompt)](https://pypi.org/project/InquirerPrompt/)
+[![Version](https://img.shields.io/pypi/pyversions/InquirerPrompt?style=flat-square)](https://pypi.org/project/InquirerPrompt/)
+[![PyPi](https://img.shields.io/pypi/v/InquirerPrompt?style=flat-square&logo=pypi&logoColor=white)](https://pypi.org/project/InquirerPrompt/)
 [![Upstream](https://img.shields.io/badge/upstream-kazhala%2FInquirerPy-blue)](https://github.com/kazhala/InquirerPy)
 
 Documentation: [InquirerPrompt.readthedocs.io](https://InquirerPrompt.readthedocs.io)
@@ -70,7 +70,7 @@ Leveraging [prompt_toolkit](https://github.com/prompt-toolkit/python-prompt-tool
 ### Python
 
 ```
-python >= 3.7
+python >= 3.9
 ```
 
 ## Getting Started
@@ -80,7 +80,7 @@ Checkout full documentation **[here](https://InquirerPrompt.readthedocs.io/)**.
 ### Install
 
 ```sh
-pip3 install InquirerPy
+pip3 install InquirerPrompt
 ```
 
 ### Quick Start
@@ -167,6 +167,7 @@ more customisation options in key bindings and styles, providing pagination as w
 
 This project is based on the great work done by the following projects & their authors.
 
+- **[kazhala/InquirerPy](https://github.com/kazhala/InquirerPy)** — the original `InquirerPy` library by [@kazhala](https://github.com/kazhala). This fork exists solely because the upstream project has been inactive since 2022. All improvements here are intended to be contributed back upstream if the original author becomes active again. The MIT licence and original copyright are preserved in full.
 - [PyInquirer](https://github.com/CITGuru/PyInquirer)
 - [prompt_toolkit](https://github.com/prompt-toolkit/python-prompt-toolkit)
 

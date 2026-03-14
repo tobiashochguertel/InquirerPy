@@ -1,0 +1,62 @@
+name: Compatibility Check
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+  schedule:
+    # Run weekly to catch upstream changes even when fork is idle
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+jobs:
+  compat:
+    name: API Compatibility vs upstream InquirerPy
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Need full history for auto-commit step
+          fetch-depth: 0
+          token: ${{ secrets.GH_RELEASE_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install griffe with PyPI support
+        run: pip install "griffe[pypi]"
+
+      - name: Install fork package (editable)
+        run: pip install -e .
+
+      - name: Run compatibility check
+        id: compat
+        run: |
+          python scripts/compat_check.py --output docs/pages/compat_report.md
+          echo "report_exists=true" >> "$GITHUB_OUTPUT"
+        # Never fail CI — this is a report-only step
+        continue-on-error: true
+
+      - name: Upload compatibility report as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: compatibility-report
+          path: docs/pages/compat_report.md
+          if-no-files-found: warn
+
+      - name: Commit updated report (master only)
+        if: github.ref == 'refs/heads/master' && github.event_name != 'pull_request'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/pages/compat_report.md
+          if git diff --cached --quiet; then
+            echo "No changes to compat_report.md — nothing to commit."
+          else
+            git commit -m "docs: update upstream compatibility report [skip ci]"
+            git push
+          fi
