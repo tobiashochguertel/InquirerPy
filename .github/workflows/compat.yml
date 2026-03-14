@@ -27,8 +27,8 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Install griffe with PyPI support
-        run: pip install "griffe[pypi]"
+      - name: Install griffe
+        run: pip install "griffe>=1.0"
 
       - name: Install fork package (editable)
         run: pip install -e .

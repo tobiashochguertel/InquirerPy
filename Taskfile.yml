@@ -198,7 +198,7 @@ tasks:
       - task: coverage:xml
 
   compat:
-    desc: Check API compatibility with upstream InquirerPy (requires griffe[pypi])
+    desc: Check API compatibility with upstream InquirerPy (requires griffe)
     cmds:
       - "{{.POETRY}} run python scripts/compat_check.py"
 
