@@ -26,7 +26,7 @@
 ---
 
 [![CI](https://github.com/tobiashochguertel/InquirerPy/workflows/CI/badge.svg)](https://github.com/tobiashochguertel/InquirerPy/actions?query=workflow%3ACI)
-[![Coverage](https://codecov.io/gh/tobiashochguertel/InquirerPy/branch/master/graph/badge.svg)](https://codecov.io/gh/tobiashochguertel/InquirerPy)
+[![Coverage](https://codecov.io/gh/tobiashochguertel/InquirerPy/branch/main/graph/badge.svg)](https://codecov.io/gh/tobiashochguertel/InquirerPy)
 [![Version](https://img.shields.io/pypi/pyversions/InquirerPrompt?style=flat-square)](https://pypi.org/project/InquirerPrompt/)
 [![PyPi](https://img.shields.io/pypi/v/InquirerPrompt?style=flat-square&logo=pypi&logoColor=white)](https://pypi.org/project/InquirerPrompt/)
 [![Upstream](https://img.shields.io/badge/upstream-kazhala%2FInquirerPy-blue)](https://github.com/kazhala/InquirerPy)
@@ -43,7 +43,7 @@ as well as more customisation options.
 
 <!-- end intro -->
 
-![Demo](https://github.com/kazhala/gif/blob/master/InquirerPy-demo.gif)
+![Demo](https://raw.githubusercontent.com/kazhala/gif/master/InquirerPy-demo.gif)
 
 ## Motivation
 
@@ -173,4 +173,4 @@ This project is based on the great work done by the following projects & their a
 
 ## License
 
-This project is licensed under [MIT](https://github.com/kazhala/InquirerPy/blob/master/LICENSE).
+This project is licensed under [MIT](https://github.com/tobiashochguertel/InquirerPy/blob/main/LICENSE).
