@@ -53,12 +53,13 @@ python = "^3.9"
 sphinx-autobuild = { version = "^2021.3.14", optional = true }
 sphinx-copybutton = { version = "^0.4.0", optional = true }
 
-[tool.poetry.dev-dependencies]
+[tool.poetry.group.dev.dependencies]
 black = "^24.0"
 coverage = {extras = ["toml"], version = "^7.0"}
 isort = "^5.13"
 pre-commit = "^3.0"
 pydocstyle = "^6.3"
+pyright = "^1.1"
 pytest = "^8.0"
 pytest-cov = "^5.0"
 python-semantic-release = "^9.0"
