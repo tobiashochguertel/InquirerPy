@@ -1,4 +1,5 @@
 """Module contains the class to create a secret prompt."""
+
 from typing import TYPE_CHECKING, Any, Callable, List, Optional, Tuple
 
 from InquirerPy.prompts.input import InputPrompt
@@ -127,8 +128,10 @@ class SecretPrompt(InputPrompt):
         )
         post_answer = (
             "class:answer",
-            ""
-            if not self.status["result"]
-            else " %s" % "".join(["*" for _ in self.status["result"]]),
+            (
+                ""
+                if not self.status["result"]
+                else " %s" % "".join(["*" for _ in self.status["result"]])
+            ),
         )
         return super()._get_prompt_message(pre_answer, post_answer)

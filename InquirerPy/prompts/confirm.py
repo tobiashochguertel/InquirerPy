@@ -1,4 +1,5 @@
 """Module contains the class to create a confirm prompt."""
+
 from typing import TYPE_CHECKING, Any, Callable, List, Optional, Tuple
 
 from prompt_toolkit.buffer import ValidationState
@@ -143,9 +144,11 @@ class ConfirmPrompt(BaseSimplePrompt):
             key_bindings=self._kb,
             style=self._style,
             wrap_lines=self._wrap_lines,
-            bottom_toolbar=[("class:long_instruction", long_instruction)]
-            if long_instruction
-            else None,
+            bottom_toolbar=(
+                [("class:long_instruction", long_instruction)]
+                if long_instruction
+                else None
+            ),
             input=input,
             output=output,
         )
@@ -180,9 +183,12 @@ class ConfirmPrompt(BaseSimplePrompt):
         if not self.instruction:
             pre_answer = (
                 "class:instruction",
-                " (%s/%s) " % (self._confirm_letter.upper(), self._reject_letter)
-                if self._default
-                else " (%s/%s) " % (self._confirm_letter, self._reject_letter.upper()),
+                (
+                    " (%s/%s) " % (self._confirm_letter.upper(), self._reject_letter)
+                    if self._default
+                    else " (%s/%s) "
+                    % (self._confirm_letter, self._reject_letter.upper())
+                ),
             )
         else:
             pre_answer = ("class:instruction", " %s " % self.instruction)

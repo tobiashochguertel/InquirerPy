@@ -1,4 +1,5 @@
 """Contains the base class :class:`.BaseSimplePrompt`."""
+
 import os
 import re
 from abc import ABC, abstractmethod

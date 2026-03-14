@@ -1,4 +1,5 @@
 """Module contains the class to create filepath prompt and filepath completer class."""
+
 import os
 from pathlib import Path
 from typing import TYPE_CHECKING, Any, Callable, Generator, Optional

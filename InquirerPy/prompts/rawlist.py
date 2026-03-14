@@ -1,4 +1,5 @@
 """Module contains the class to create a rawlist prompt."""
+
 from typing import Any, Callable, List, Optional, Tuple, Union
 
 from InquirerPy.base import InquirerPyUIListControl

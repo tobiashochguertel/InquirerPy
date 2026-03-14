@@ -2,6 +2,7 @@
 
 A `PyInquirer <https://github.com/CITGuru/PyInquirer>`_ compatible entrypoint :func:`.prompt`.
 """
+
 from typing import Any, Dict, List, Optional, Tuple, Union
 
 from InquirerPy.exceptions import InvalidArgument, RequiredKeyNotFound

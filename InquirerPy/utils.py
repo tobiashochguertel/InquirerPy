@@ -1,4 +1,5 @@
 """Module contains shared utility functions and typing aliases."""
+
 import math
 import os
 import shutil

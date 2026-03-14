@@ -6,6 +6,7 @@ Note:
 
     Use library such as `yaspin <https://github.com/pavdmyt/yaspin>`_ if you need a plain spinner.
 """
+
 import asyncio
 from typing import TYPE_CHECKING, Callable, List, NamedTuple, Optional, Tuple, Union
 

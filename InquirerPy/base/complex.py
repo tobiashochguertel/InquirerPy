@@ -1,4 +1,5 @@
 """Contains the interface class :class:`.BaseComplexPrompt` for more complex prompts and the mocked document class :class:`.FakeDocument`."""
+
 import shutil
 from dataclasses import dataclass
 from typing import Any, Callable, List, Optional, Tuple, Union

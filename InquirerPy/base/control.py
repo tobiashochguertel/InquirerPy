@@ -1,4 +1,5 @@
 """Contains the content control class :class:`.InquirerPyUIListControl`."""
+
 from abc import abstractmethod
 from dataclasses import asdict, dataclass
 from typing import Any, Callable, Dict, List, Optional, Tuple, cast
@@ -97,9 +98,11 @@ class InquirerPyUIListControl(FormattedTextControl):
                         {
                             "name": str(choice["name"]),
                             "value": choice["value"],
-                            "enabled": choice.get("enabled", False)
-                            if self._multiselect
-                            else False,
+                            "enabled": (
+                                choice.get("enabled", False)
+                                if self._multiselect
+                                else False
+                            ),
                         }
                     )
                 elif isinstance(choice, Separator):

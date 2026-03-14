@@ -1,4 +1,5 @@
 """Module contains the class to create a checkbox prompt."""
+
 from typing import Any, Callable, List, Optional, Tuple, Union
 
 from prompt_toolkit.validation import ValidationError
@@ -61,9 +62,11 @@ class InquirerPyCheckboxControl(InquirerPyUIListControl):
             display_choices.append(
                 (
                     "class:checkbox",
-                    self._enabled_symbol
-                    if choice["enabled"]
-                    else self._disabled_symbol,
+                    (
+                        self._enabled_symbol
+                        if choice["enabled"]
+                        else self._disabled_symbol
+                    ),
                 )
             )
             if self._enabled_symbol and self._disabled_symbol:
@@ -81,9 +84,11 @@ class InquirerPyCheckboxControl(InquirerPyUIListControl):
             display_choices.append(
                 (
                     "class:checkbox",
-                    self._enabled_symbol
-                    if choice["enabled"]
-                    else self._disabled_symbol,
+                    (
+                        self._enabled_symbol
+                        if choice["enabled"]
+                        else self._disabled_symbol
+                    ),
                 )
             )
             if self._enabled_symbol and self._disabled_symbol:

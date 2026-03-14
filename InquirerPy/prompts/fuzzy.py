@@ -1,4 +1,5 @@
 """Module contains the class to create a fuzzy prompt."""
+
 import asyncio
 import math
 from typing import (
@@ -119,9 +120,11 @@ class InquirerPyFuzzyControl(InquirerPyUIListControl):
         display_choices.append(
             (
                 "class:marker",
-                self._marker
-                if self.choices[choice["index"]]["enabled"]
-                else self._marker_pl,
+                (
+                    self._marker
+                    if self.choices[choice["index"]]["enabled"]
+                    else self._marker_pl
+                ),
             )
         )
         display_choices.append(("[SetCursorPosition]", ""))
@@ -152,9 +155,11 @@ class InquirerPyFuzzyControl(InquirerPyUIListControl):
         display_choices.append(
             (
                 "class:marker",
-                self._marker
-                if self.choices[choice["index"]]["enabled"]
-                else self._marker_pl,
+                (
+                    self._marker
+                    if self.choices[choice["index"]]["enabled"]
+                    else self._marker_pl
+                ),
             )
         )
         if not choice["indices"]:
@@ -627,9 +632,9 @@ class FuzzyPrompt(BaseListPrompt):
         if not self._multiselect:
             return
         current_selected_index = self.content_control.selection["index"]
-        self.content_control.choices[current_selected_index][
-            "enabled"
-        ] = not self.content_control.choices[current_selected_index]["enabled"]
+        self.content_control.choices[current_selected_index]["enabled"] = (
+            not self.content_control.choices[current_selected_index]["enabled"]
+        )
 
     def _handle_enter(self, event: "KeyPressEvent") -> None:
         """Handle enter event.

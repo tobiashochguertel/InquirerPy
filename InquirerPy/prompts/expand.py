@@ -1,4 +1,5 @@
 """Module contains the class to create an expand prompt."""
+
 from dataclasses import dataclass
 from typing import Any, Callable, List, Optional, Tuple, Union
 

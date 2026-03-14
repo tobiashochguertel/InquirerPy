@@ -1,4 +1,5 @@
 """Module contains pre-built validators."""
+
 import re
 from pathlib import Path
 from typing import Optional

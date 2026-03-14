@@ -1,4 +1,5 @@
 """Module contains the class to create a number prompt."""
+
 import re
 from decimal import Decimal
 from typing import TYPE_CHECKING, Any, Callable, Optional, Tuple, Union, cast
@@ -269,9 +270,11 @@ class NumberPrompt(BaseComplexPrompt):
                     VSplit(
                         [
                             Window(
-                                height=LayoutDimension.exact(1)
-                                if not self._wrap_lines
-                                else None,
+                                height=(
+                                    LayoutDimension.exact(1)
+                                    if not self._wrap_lines
+                                    else None
+                                ),
                                 content=FormattedTextControl(self._get_prompt_message),
                                 wrap_lines=self._wrap_lines,
                                 dont_extend_height=True,
@@ -280,9 +283,11 @@ class NumberPrompt(BaseComplexPrompt):
                             ConditionalContainer(self._whole_window, filter=~IsDone()),
                             ConditionalContainer(
                                 Window(
-                                    height=LayoutDimension.exact(1)
-                                    if not self._wrap_lines
-                                    else None,
+                                    height=(
+                                        LayoutDimension.exact(1)
+                                        if not self._wrap_lines
+                                        else None
+                                    ),
                                     content=FormattedTextControl(
                                         [("", self._decimal_symbol)]
                                     ),

@@ -1,4 +1,5 @@
 """Contains the base class :class:`.BaseListPrompt` which can be used to create a prompt involving choices."""
+
 from abc import abstractmethod
 from typing import Any, Callable, List, Optional
 

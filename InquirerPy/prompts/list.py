@@ -1,4 +1,5 @@
 """Module contains the class to create a list prompt."""
+
 import shutil
 from typing import TYPE_CHECKING, Any, Callable, List, Optional, Tuple, Union
 
@@ -244,9 +245,11 @@ class ListPrompt(BaseListPrompt):
             content=HSplit(
                 [
                     MessageWindow(
-                        message=self._get_prompt_message_with_cursor
-                        if self._show_cursor
-                        else self._get_prompt_message,
+                        message=(
+                            self._get_prompt_message_with_cursor
+                            if self._show_cursor
+                            else self._get_prompt_message
+                        ),
                         filter=True,
                         wrap_lines=self._wrap_lines,
                         show_cursor=self._show_cursor,
